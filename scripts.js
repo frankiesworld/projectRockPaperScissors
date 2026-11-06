@@ -14,7 +14,8 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     const humanChoice = prompt("Enter your choice (rock, paper, or scissors):");
-    return humanChoice.toLowerCase();
+    if (humanChoice === null) return"";
+    return humanChoice.trim().toLowerCase();
 }
 
 
@@ -75,6 +76,9 @@ function playGame() {
         console.log("The game is a tie!");
     }
 
+    document.querySelector("#play-me").addEventListener("click", playGame);
+
 }
 
 playGame();
+
